@@ -62,7 +62,7 @@ void resetGame()
 
 void checkPlayerCollision()
 {
-    bool onPlatform = false;
+   bool onPlatform = false;
     for (int i = 0; i < 4; i++)
     {
         if (platforms[i].getHasCoin() && player.getX() + player.getWidth() - 3 > platforms[i].getCoinX() && player.getX() + 3 < platforms[i].getCoinX() + 24 && player.getY() + player.getHeight() - 3 > platforms[i].getCoinY() && player.getY() + 3 < platforms[i].getCoinY() + 24)
@@ -144,7 +144,7 @@ int main(void)
                 DrawTextEx(font, highscore,Vector2{screenWidth/2 - 37, screenHeight/2 + 10}, 32, 0, BLACK); 
                 DrawTextEx(font, "CLICK ANYWHERE TO BEGIN",Vector2{screenWidth/2 - 134, screenHeight/2 + 50}, 32, 0, ColorFromNormalized((Vector4){.698, .588, .49, 0.4})); 
                 EndDrawing();
-                if (IsMouseButtonPressed(0))
+                if (IsMouseButtonDown(MOUSE_LEFT_BUTTON))
                 {
                     PlaySound(fxSelect);
                     titleScreen = false;
@@ -167,28 +167,37 @@ int main(void)
         } 
         else 
         {
+            
+         
             if (playCoinFX)
             {
                 PlaySound(fxCoin);
                 playCoinFX = false;
             }
-            
-            
-            if (IsMouseButtonPressed(0) && player.isOnGround())
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && player.isOnGround())
             {
-                mouseDownX = GetMouseX();
-                mouseDownY = GetMouseY();
+                    PlaySound(fxClick);
+                    mouseDownX = GetMouseX();
+                    mouseDownY = GetMouseY();
             }
-            
-            
-            if (IsMouseButtonReleased(0) && player.isOnGround())
-            {             
-                int velocityX = GetMouseX() - mouseDownX;
-                int velocityY = GetMouseY() - mouseDownY;
-                
-                player.setVelocity((double)velocityX*.08, (double)velocityY*.08);    
+            if (IsMouseButtonReleased(MOUSE_LEFT_BUTTON) && player.isOnGround())
+            {
+                if (firstTime)
+                {
+                    firstTime = false;
+                } else {
+                    PlaySound(fxLaunch);
+                    if (player.isOnPlatform())
+                    {
+                        player.setY(player.getY() - 1);
+                    }
+                    int velocityX = GetMouseX() - mouseDownX;
+   
+                    int velocityY = GetMouseY() - mouseDownY;
+
+                    player.setVelocity((double)velocityX*.08, (double)velocityY*.08);
+                }
             }
-            
             checkPlayerCollision();
             player.updatePosition();
             if (player.getY() > screenHeight)
@@ -206,9 +215,9 @@ int main(void)
             BeginDrawing();
         
             ClearBackground(ColorFromNormalized((Vector4){0.933, 0.894, 0.882, 1.0}));
-            if (IsMouseButtonDown(0) && player.isOnGround())
+            if (IsMouseButtonDown(MOUSE_LEFT_BUTTON) && player.isOnGround())
             {   
-                DrawLineEx((Vector2){mouseDownX + (player.getX() - mouseDownX) + (player.getWidth()/2), mouseDownY + (player.getY() - mouseDownY) + (player.getHeight()/2)}, (Vector2){GetMouseX() + (player.getX() - mouseDownX) + (player.getWidth()/2), GetMouseY() + (player.getY() - mouseDownY) + (player.getHeight()/2)}, 3.0f, ColorFromNormalized((Vector4){.906, .847, .788, 1.0}));
+                DrawLineEx((Vector2){static_cast<float>(mouseDownX + (player.getX() - mouseDownX) + (player.getWidth()/2)), static_cast<float>(mouseDownY + (player.getY() - mouseDownY) + (player.getHeight()/2))}, (Vector2){static_cast<float>(GetMouseX() + (player.getX() - mouseDownX) + (player.getWidth()/2)), static_cast<float>(GetMouseY() + (player.getY() - mouseDownY) + (player.getHeight()/2))}, 3.0f, ColorFromNormalized((Vector4){.906, .847, .788, 1.0}));
             }
             //DrawRectangle(player.getX(), player.getY(), player.getWidth(), player.getHeight(), WHITE);  
             for (int i = 0; i < 4; i++)

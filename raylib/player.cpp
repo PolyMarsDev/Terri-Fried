@@ -63,7 +63,8 @@ void Player::setOnPlatform(bool result)
 
 void Player::setVelocity(double x, double y)
 {
-    velocity = (Vector2){x, y};
+    velocity = (Vector2){static_cast<float>(x), static_cast<float>(y)};
+}
 
 Vector2 Player::getVelocity()
 {
