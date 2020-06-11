@@ -1,78 +1,74 @@
-#include "raylib.h"
 #include "platform.h"
 #include <math.h>
+
 const int screenWidth = 800;
 const int screenHeight = 450;
-Platform::Platform(int index)
-{
+
+Platform::Platform(int index) {
     width = 100;
     height = 32;
+    
     x = rand()% 660 + 20;
     y = 0 - height - (index * 100);
+    
     int coinInt = rand()% 4;
+    
     if (coinInt == 0 || index == 0)
-    {
         hasCoin = false;
-    } else {
+    else
         hasCoin = true;
-    }
+    
     coinX = x + width/2 - 24/2;
     coinY = y - 24 - 5;
-    
 }
 
-double Platform::getX()
-{
+double Platform::getX() {
     return x;
 }
 
-double Platform::getY()
-{
+double Platform::getY() {
     return y;
 }
 
-int Platform::getWidth()
-{
+int Platform::getWidth() {
     return width;
 }
 
-int Platform::getHeight()
-{
+int Platform::getHeight() {
     return height;
 }
 
-bool Platform::getHasCoin()
-{
+bool Platform::getHasCoin() {
     return hasCoin;
 }
-void Platform::setHasCoin(bool value)
-{
+
+void Platform::setHasCoin(bool value) {
     hasCoin = value;
 }
-int Platform::getCoinX()
-{
+
+int Platform::getCoinX() {
     return coinX;
 }
-int Platform::getCoinY()
-{
+
+int Platform::getCoinY() {
     return coinY;
 }
 
-void Platform::updatePosition()
-{
+void Platform::updatePosition() {
     y+=1;
+    
     coinX = x + width/2 - 24/2;
     coinY = y - 24 - 5;
-    if (y > screenHeight)
-    {
+    
+    if (y > screenHeight) {
         x = rand()% 660 + 20;
         y = 0 - height;
+        
         int coinInt = rand()% 4;
+        
         if (coinInt == 0)
-        {
             hasCoin = false;
-        } else {
+        else
             hasCoin = true;
-        }
     }
 }
