@@ -20,6 +20,6 @@ NightFox's Lib does not need to be downloaded as it is already integrated into t
 ### Wii
 Compiling for Wii requires the libogc libraries that can be installed with [devkitPro](https://devkitpro.org/wiki/Getting_Started). You will also need [GRRLIB](https://github.com/GRRLIB/GRRLIB). Then, open the command prompt in the ``/wii`` directory and type ``make``.
 ### GameCube
-Compiling for GameCube requires the same libogc libraries from [devkitPro](https://devkitpro.org/wiki/Getting_Started), but it requires a different fork of GRRLIB that can be found [here](https://github.com/capz/GRRLIB). Then, open the command prompt in the ``/gamecube`` directory and type ``make``.
+Compiling for GameCube requires the same libogc libraries from [devkitPro](https://devkitpro.org/wiki/Getting_Started) but a different fork of GRRLIB that can be found [here](https://github.com/capz/GRRLIB). Then, open the command prompt in the ``/gamecube`` directory and type ``make``.
 ## Contributing
 Feel free to create a fork of this repository if you want to port the game to additional platforms! The code can also be used for any other noncommercial purposes.
