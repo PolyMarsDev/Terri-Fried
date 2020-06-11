@@ -13,6 +13,8 @@ After participating in Ludum Dare 46, I challenged myself to port my entry to as
 ## Compiling
 ### raylib (Windows)
 After installing [raylib](https://github.com/raysan5/raylib/releases), open the command prompt in the ``/raylib`` directory and type ``make``.
+### SDL2 (Windows)
+Tested with msys2. Install the `SDL2`, `SDL2_image`, `SDL2_mixer` and `SDL2_ttf` packages with `pacman`, then execute `make` in the windows_sdl2 folder. Finally, copy the resources folder to the output executable location.
 ### PS Vita
 Compiling for PS Vita requires vitasdk. Then, open the command prompt in the ``/psvita`` directory and type ``cmake .&& make``.
 ### Nintendo DS
