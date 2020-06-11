@@ -236,10 +236,20 @@ int main(int argc, char **argv) {
             }
             
             if (mouse_released && player.isOnGround()) {
-                int velocityX = mouse_x - mouseDownX;
-                int velocityY = mouse_y - mouseDownY;
-                
-                player.setVelocity((double)velocityX*.08, (double)velocityY*.08);    
+                if (firstTime) {
+                    firstTime = false;
+                }
+                else {
+                    Mix_PlayChannel(-1, fxLaunch, 0);
+                    
+                    if(player.isOnPlatform())
+                        player.setY(player.getY() - 1);
+                    
+                    int velocityX = mouse_x - mouseDownX;
+                    int velocityY = mouse_y - mouseDownY;
+                    
+                    player.setVelocity((double)velocityX*.08, (double)velocityY*.08);
+                }
             }
             
             checkPlayerCollision();
