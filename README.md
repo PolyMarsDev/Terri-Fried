@@ -7,7 +7,7 @@ Terri-Fried is a multi-platform C++ game made in 72 hours for Ludum Dare 46. It 
 
 
 ## Background
-After participating in Ludum Dare 46, I challenged myself to port my entry, a simple platformer where you launch an egg between platforms to avoid falling in lava, to as many consoles as I could using various homebrew libraries. The original code was written in 72 hours so it isn't perfect, but I decided to provide the source regardless to hopefully help anyone interested in making games for any of these platforms. Feel free to ask any questions if you need anything to be clarified!
+After participating in Ludum Dare 46, I challenged myself to port my entry to as many consoles as I could using various homebrew libraries. The game is a simple platformer where you launch an egg between platforms to avoid falling in lava. The code was written in 72 hours so it isn't perfect, but I decided to provide the source regardless to hopefully help anyone interested in making games for these platforms. Feel free to ask any questions if you need anything to be clarified!
 
 
 ## Compiling
