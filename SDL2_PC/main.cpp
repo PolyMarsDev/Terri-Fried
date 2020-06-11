@@ -150,14 +150,14 @@ int main(int argc, char **argv) {
     
     bool quit = false;
     
-    bool mouse_pressed = false;
+    bool mouse_down = false;
     
     int mouse_x, mouse_y;
     
     while (!quit) {
         SDL_Event e;
         bool mouse_released = false;
-        bool mouse_down = false;
+        bool mouse_pressed = false;
         
         while(SDL_PollEvent(&e)) {
             switch(e.type) {
@@ -165,11 +165,11 @@ int main(int argc, char **argv) {
                     quit = true;
                 } break;
                 case SDL_MOUSEBUTTONDOWN: {
-                    mouse_pressed = true;
                     mouse_down = true;
+                    mouse_pressed = true;
                 } break;
                 case SDL_MOUSEBUTTONUP: {
-                    mouse_pressed = false;
+                    mouse_down = false;
                     mouse_released = true;
                 } break;
             }
@@ -235,7 +235,7 @@ int main(int argc, char **argv) {
                 mouseDownY = mouse_y;
             }
             
-            if (mouse_released && player.isOnGround()) {             
+            if (mouse_released && player.isOnGround()) {
                 int velocityX = mouse_x - mouseDownX;
                 int velocityY = mouse_y - mouseDownY;
                 
@@ -260,7 +260,7 @@ int main(int argc, char **argv) {
             SDL_RenderClear(renderer);
             
             if (mouse_down && player.isOnGround()) {
-                SDL_SetRenderDrawColor(renderer, 0.906*255, 0.847*255, 0.788*255, 1.0*255);
+                SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
                 SDL_RenderDrawLine(
                     renderer,
                     mouseDownX + (player.getX() - mouseDownX) + (player.getWidth()/2),
