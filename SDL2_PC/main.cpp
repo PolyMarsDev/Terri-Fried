@@ -16,8 +16,28 @@ const int gravity = 1;
 Platform platforms[4] = {{0}, {1}, {2}, {3}};
 Player player(platforms[0].getX() + platforms[0].getWidth()/2 - 26/2, platforms[0].getY() - player.getHeight(), 26, 32);
 
+int LoadHighScore() {
+    FILE *scorefile = fopen("highscore.bin", "rb");
+    
+    if(!scorefile)
+        return 0;
+    
+    int ret;
+    fread(&ret, sizeof(int), 1, scorefile);
+    fclose(scorefile);
+    
+    return ret;
+}
+
+void SaveHighScore(int val) {
+    FILE *scorefile = fopen("highscore.bin", "wb");
+    
+    fwrite(&val, sizeof(int), 1, scorefile);
+    fclose(scorefile);
+}
+
 int scoreInt = 0;
-int highscoreInt = 0; //LoadStorageValue(0); // TODO: Implement natively
+int highscoreInt = LoadHighScore();
 char score[32];
 char highscore[32];
 
@@ -43,7 +63,7 @@ void addScore(int amount) {
 void resetScore() {
     scoreInt = 0;
     sprintf(score, "00%d", scoreInt);
-    // SaveStorageValue(0, highscoreInt); // TODO: Implement natively
+    SaveHighScore(highscoreInt);
 }
 
 void resetGame() {
@@ -82,6 +102,18 @@ void checkPlayerCollision() {
     player.setOnPlatform(onPlatform);
 }
 
+void Draw_Font(SDL_Renderer *renderer, const char *str, int x, int y, int width, int height, int size, SDL_Color color) {
+    TTF_Font* font = TTF_OpenFont("resources/font.otf", size);
+    
+    SDL_Surface* message_surf = TTF_RenderText_Blended(font, str, color);
+    SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, message_surf);
+    SDL_Rect Message_rect = {x, y, width, height};
+    SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
+    
+    SDL_DestroyTexture(Message);
+    SDL_FreeSurface(message_surf);
+    TTF_CloseFont(font);
+}
 
 int main(int argc, char **argv) {
     srand(time(NULL));
@@ -146,8 +178,6 @@ int main(int argc, char **argv) {
     Mix_Chunk* fxSplash = Mix_LoadWAV("resources/splash.wav");
     Mix_Chunk* fxSelect = Mix_LoadWAV("resources/select.wav");
     
-    TTF_Font* font = TTF_OpenFont("resources/font.otf", 64);
-    
     bool quit = false;
     
     bool mouse_down = false;
@@ -178,7 +208,8 @@ int main(int argc, char **argv) {
         SDL_PumpEvents();
         SDL_GetMouseState(&mouse_x, &mouse_y);
         
-        SDL_Delay(16);
+        // TODO: Vsync instead
+        SDL_Delay(12);
         
         if (titleScreen) {
             if (splashTimer > 120) {
@@ -193,8 +224,8 @@ int main(int argc, char **argv) {
                 SDL_Rect logo_rect = { screenWidth/2 - 200, screenHeight/2 - 45 - 30, 400, 90 };
                 SDL_RenderCopy(renderer, logo, NULL, &logo_rect);
                 
-                //DrawTextEx(font, highscore,Vector2{screenWidth/2 - 37, screenHeight/2 + 10}, 32, 0, BLACK); 
-                //DrawTextEx(font, "CLICK ANYWHERE TO BEGIN",Vector2{screenWidth/2 - 134, screenHeight/2 + 50}, 32, 0, ColorFromNormalized((Vector4){.698, .588, .49, 0.4})); 
+                Draw_Font(renderer, highscore, screenWidth/2 - 37, screenHeight/2 + 10, 74, 32, 32, {0, 0, 0});
+                Draw_Font(renderer, "CLICK ANYWHERE TO BEGIN", screenWidth/2 - 134, screenHeight/2 + 50, 268, 32, 32, {178, 150, 125});
                 
                 SDL_RenderPresent(renderer);
                 
@@ -214,7 +245,7 @@ int main(int argc, char **argv) {
                 SDL_SetRenderDrawColor(renderer, 0.933 * 255, 0.894 * 255, 0.882 * 255, 1.0 * 255);
                 SDL_RenderClear(renderer);
                 
-                //DrawTextEx(font, "POLYMARS",Vector2{screenWidth/2 - 54, screenHeight/2 + 3}, 32, 0, ColorFromNormalized((Vector4){.835, .502, .353, 1.0}));
+                Draw_Font(renderer, "POLYMARS", screenWidth/2 - 54, screenHeight/2 + 3, 108, 32, 32, {213, 128, 90});
                 
                 SDL_Rect splashEggSprite_rect = { screenWidth/2 - 16, screenHeight/2 - 16 - 23, 32, 32 };
                 SDL_RenderCopy(renderer, splashEggSprite, NULL, &splashEggSprite_rect);
@@ -231,6 +262,7 @@ int main(int argc, char **argv) {
             }
             
             if (mouse_pressed && player.isOnGround()) {
+                Mix_PlayChannel(-1, fxClick, 0);
                 mouseDownX = mouse_x;
                 mouseDownY = mouse_y;
             }
@@ -270,7 +302,7 @@ int main(int argc, char **argv) {
             SDL_RenderClear(renderer);
             
             if (mouse_down && player.isOnGround()) {
-                SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+                SDL_SetRenderDrawColor(renderer, 178, 150, 125, 255);
                 SDL_RenderDrawLine(
                     renderer,
                     mouseDownX + (player.getX() - mouseDownX) + (player.getWidth()/2),
@@ -301,8 +333,8 @@ int main(int argc, char **argv) {
             SDL_Rect scoreBoxSprite_rect = { 17, 17, 102, 70 };
             SDL_RenderCopy(renderer, scoreBoxSprite, NULL, &scoreBoxSprite_rect);
             
-            //DrawTextEx(font, score,Vector2{28, 20},64, 0, BLACK);        
-            //DrawTextEx(font, highscore,Vector2{17, 90}, 32, 0, BLACK);        
+            Draw_Font(renderer, score, 28, 20, 75, 64, 64, {0, 0, 0});
+            Draw_Font(renderer, highscore, 17, 90, 74, 32, 32, {0, 0, 0});
             
             SDL_RenderPresent(renderer);
         }
@@ -331,8 +363,6 @@ int main(int argc, char **argv) {
     Mix_FreeChunk(fxCoin);
     Mix_FreeChunk(fxSplash);
     Mix_FreeChunk(fxSelect);
-    
-    TTF_CloseFont(font);
     
     Mix_CloseAudio();
     TTF_Quit();
