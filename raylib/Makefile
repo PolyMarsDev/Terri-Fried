@@ -24,7 +24,7 @@
 .PHONY: all clean
 
 # Define required raylib variables
-PROJECT_NAME       ?= Terr-Fried
+PROJECT_NAME       ?= Terri-Fried
 RAYLIB_VERSION     ?= 3.0.0
 RAYLIB_API_VERSION ?= 3
 RAYLIB_PATH        ?= ../..
