@@ -11,17 +11,18 @@ After participating in Ludum Dare 46, I challenged myself to port my entry to as
 
 
 ## Compiling
-### raylib (Windows)
-After installing [raylib](https://github.com/raysan5/raylib/releases), open the command prompt in the ``/raylib`` directory and type ``make``.
-### SDL2 (Windows)
-Tested with msys2. Install the `SDL2`, `SDL2_image`, `SDL2_mixer` and `SDL2_ttf` packages with `pacman`, then execute `make` in the windows_sdl2 folder. Finally, copy the resources folder to the output executable location.
+### Windows
+#### raylib 
+After installing [raylib](https://github.com/raysan5/raylib/releases), execute ``make`` in the ``/raylib`` directory.
+#### SDL2 
+Tested with msys2. Install the `SDL2`, `SDL2_image`, `SDL2_mixer` and `SDL2_ttf` packages with `pacman`, then execute `make` in the windows/sdl2 folder. Finally, copy the resources folder to the output executable location.
 ### PS Vita
-Compiling for PS Vita requires vitasdk. Then, open the command prompt in the ``/psvita`` directory and type ``cmake .&& make``.
+Compiling for PS Vita requires vitasdk. Then, execute ``cmake .&& make`` in the ``/psvita`` directory.
 ### Nintendo DS
 NightFox's Lib does not need to be downloaded as it is already integrated into this repository, but you'll need to install the libnds libraries with [devkitPro](https://devkitpro.org/wiki/Getting_Started). Then, run the ``compile.bat`` script in ``/nds``.
 ### Wii
-Compiling for Wii requires the libogc libraries that can be installed with [devkitPro](https://devkitpro.org/wiki/Getting_Started). You will also need [GRRLIB](https://github.com/GRRLIB/GRRLIB). Then, open the command prompt in the ``/wii`` directory and type ``make``.
+Compiling for Wii requires the libogc libraries that can be installed with [devkitPro](https://devkitpro.org/wiki/Getting_Started). You will also need [GRRLIB](https://github.com/GRRLIB/GRRLIB). Then, execute ``make`` in the ``/wii`` directory.
 ### GameCube
-Compiling for GameCube requires the same libogc libraries from [devkitPro](https://devkitpro.org/wiki/Getting_Started) but a different fork of GRRLIB that can be found [here](https://github.com/capz/GRRLIB). Then, open the command prompt in the ``/gamecube`` directory and type ``make``.
+Compiling for GameCube requires the same libogc libraries from [devkitPro](https://devkitpro.org/wiki/Getting_Started) but a different fork of GRRLIB that can be found [here](https://github.com/capz/GRRLIB). Then, execute ``make`` in the ``/gamecube`` directory.
 ## Contributing
 Feel free to create a fork of this repository if you want to port the game to additional platforms! The code can also be used for any other noncommercial purposes.
