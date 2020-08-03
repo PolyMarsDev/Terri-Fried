@@ -8,10 +8,10 @@ const int screenWidth = 640;
 const int screenHeight = 480;
 
 Player::Player(double x, double y, int width, int height) {
-	this->x = x;
-	this->y = y;
+    this->x = x;
+    this->y = y;
     this->width = width;
-	this->height = height;
+    this->height = height;
     isOnPlatform = false;
 }
 

@@ -3,7 +3,7 @@
 
 class Player {
 public:
-	double x;
+    double x;
     double y;
     
     int width;
@@ -13,8 +13,8 @@ public:
     
     double velocityX;
     double velocityY;
-	
-	Player(double x, double y, int width, int height);
+    
+    Player(double x, double y, int width, int height);
     void updatePosition();
 };
 

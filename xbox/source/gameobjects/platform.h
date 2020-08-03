@@ -3,7 +3,7 @@
 
 class Platform {
 public:
-	double x;
+    double x;
     double y;
     int width;
     int height;
@@ -11,9 +11,9 @@ public:
     int coinX;
     int coinY;
     
-	Platform(int index);
-	double getX();
-	double getY();
+    Platform(int index);
+    double getX();
+    double getY();
     int getWidth();
     int getHeight();
     bool getHasCoin();
