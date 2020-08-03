@@ -1,0 +1,16 @@
+!!TS1.0
+nop();
+
+!!RC1.0
+{
+    rgb {
+        col0 = col0.rgb;
+    }
+    
+    alpha {
+        col0 = col0.a;
+    }
+}
+
+out.rgb = unsigned(col0.rgb);
+out.a = unsigned(col0.a);
