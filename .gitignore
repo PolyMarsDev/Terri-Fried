@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+*.elf
+
+# Misc files
+*.map
+*.lst
+
+# Switch files
+*.nro
+*.nacp
