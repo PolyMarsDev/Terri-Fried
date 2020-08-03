@@ -25,7 +25,7 @@ Compiling for Wii requires the libogc libraries that can be installed with [devk
 ### GameCube
 Compiling for GameCube requires the same libogc libraries from [devkitPro](https://devkitpro.org/wiki/Getting_Started) but a different fork of GRRLIB that can be found [here](https://github.com/capz/GRRLIB). Then, execute ``make`` in the ``/gamecube`` directory.
 ### Xbox (Original)
-Clone [this fork of nxdk](https://github.com/dracc/nxdk/tree/xgu) directly next to the Terri-Fried folder, then [install the nxdk prerequisites](https://github.com/XboxDev/nxdk/wiki/Getting-Started). Follow the instructions [here](https://github.com/Voxel9/xbox-xgu-examples#quick-guide) to fix linker errors with the XGU headers in nxdk before compiling.  
+Clone [this fork of nxdk](https://github.com/dracc/nxdk/tree/xgu) directly next to the Terri-Fried folder, then [install the nxdk prerequisites](https://github.com/XboxDev/nxdk/wiki/Getting-Started). Follow the instructions [here](https://github.com/Voxel9/xbox-xgu-examples#quick-guide) to fix the XGU headers in nxdk. This is a temporary fix for some duplicate symbol linker errors.  
 Now `cd` to the `Terri-fried/xbox` folder and run `make`. An XBE file should be built in the `bin` folder. Copy the contents of the `bin` folder to your Xbox and run it.
 ## Contributing
 Feel free to create a fork of this repository if you want to port the game to additional platforms! The code can also be used for any other noncommercial purposes.
