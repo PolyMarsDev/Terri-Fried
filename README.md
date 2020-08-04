@@ -24,6 +24,9 @@ NightFox's Lib does not need to be downloaded as it is already integrated into t
 Compiling for Wii requires the libogc libraries that can be installed with [devkitPro](https://devkitpro.org/wiki/Getting_Started). You will also need [GRRLIB](https://github.com/GRRLIB/GRRLIB). Then, execute ``make`` in the ``/wii`` directory.
 ### GameCube
 Compiling for GameCube requires the same libogc libraries from [devkitPro](https://devkitpro.org/wiki/Getting_Started) but a different fork of GRRLIB that can be found [here](https://github.com/capz/GRRLIB). Then, execute ``make`` in the ``/gamecube`` directory.
+### Original Xbox
+Clone [this fork of nxdk](https://github.com/dracc/nxdk/tree/xgu) directly next to the Terri-Fried folder, then [install the nxdk prerequisites](https://github.com/XboxDev/nxdk/wiki/Getting-Started). Follow the instructions [here](https://github.com/Voxel9/xbox-xgu-examples#quick-guide) to fix the XGU headers in nxdk. This is a temporary fix for some duplicate symbol linker errors.  
+Now `cd` to the `Terri-fried/xbox` folder and run `make`. An XBE file should be built in the `bin` folder. Copy the contents of the `bin` folder to your Xbox and run `default.xbe`.
 ### Nintendo Switch
 Requires devkitpro, devkitARM, libNX and the following packages to be installed via dkp-pacman:  
 `switch-pkg-config`, `switch-SDL2`, `switch-SDL2_mixer`, `switch-SDL2_image` `switch-SDL2_ttf`  
