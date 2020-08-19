@@ -53,7 +53,7 @@ void Player::setOnPlatform(bool result) {
 }
 
 void Player::setVelocity(double x, double y) {
-    velocity = (Vector2){x, y};
+    velocity = (Vector2){(int)x, (int)y};
 }
 
 Vector2 Player::getVelocity() {
