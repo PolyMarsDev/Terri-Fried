@@ -116,11 +116,13 @@ void Draw_Font(SDL_Renderer *renderer, const char *str, int x, int y, int width,
 }
 
 int main(int argc, char **argv) {
+
     srand(time(NULL));
-    
+
     resetScore();
+
     sprintf(highscore, "BEST: %d", highscoreInt);
-    
+  
     const int screenWidth = 800;
     const int screenHeight = 450;
     
@@ -139,7 +141,6 @@ int main(int argc, char **argv) {
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
     IMG_Init(IMG_INIT_PNG);
     TTF_Init();
-    
     window = SDL_CreateWindow(
         "Terri-Fried",
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
@@ -315,7 +316,7 @@ int main(int argc, char **argv) {
             //DrawRectangle(player.getX(), player.getY(), player.getWidth(), player.getHeight(), WHITE);
             
             for (int i = 0; i < 4; i++) {
-                SDL_Rect platformSprite_rect = { platforms[i].getX(), platforms[i].getY(), 100, 32 };
+                SDL_Rect platformSprite_rect = { (int)platforms[i].getX(), (int)platforms[i].getY(), 100, 32 };
                 SDL_RenderCopy(renderer, platformSprite, NULL, &platformSprite_rect);
                 
                 if (platforms[i].getHasCoin()) {
@@ -324,10 +325,10 @@ int main(int argc, char **argv) {
                 }
             }
             
-            SDL_Rect playerSprite_rect = { player.getX(), player.getY(), 32, 32 };
+            SDL_Rect playerSprite_rect = { (int)(player.getX()), (int)(player.getY()), 32, 32 };
             SDL_RenderCopy(renderer, playerSprite, NULL, &playerSprite_rect);
             
-            SDL_Rect lavaSprite_rect = { 0, lavaY, 800, 48 };
+            SDL_Rect lavaSprite_rect = { 0, (int)lavaY, 800, 48 };
             SDL_RenderCopy(renderer, lavaSprite, NULL, &lavaSprite_rect);
             
             SDL_Rect scoreBoxSprite_rect = { 17, 17, 102, 70 };

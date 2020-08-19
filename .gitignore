@@ -45,3 +45,12 @@
 *.iso
 xbox\source\shaders\sprite-frag.inl
 xbox\source\shaders\guideline-frag.inl
+
+#macOS' .DS_Store
+*.DS_Store
+
+#build folder
+*build/
+
+#highscore
+*/highscore.bin

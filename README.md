@@ -16,6 +16,36 @@ After participating in Ludum Dare 46, I challenged myself to port my entry to as
 After installing [raylib](https://github.com/raysan5/raylib/releases), execute ``make`` in the ``/raylib`` directory.
 #### SDL2 
 Tested with msys2. Install the `SDL2`, `SDL2_image`, `SDL2_mixer` and `SDL2_ttf` packages with `pacman`, then execute `make` in the windows/sdl2 folder. Finally, copy the resources folder to the output executable location.
+### Linux
+ - Clone this repo and cd into it.
+ - Install the `SDL2`, `SDL2_image`, `SDL2_mixer` and `SDL2_ttf` libraries with your package manager.
+    ```shell
+    #ArchLinux/Manjaro
+    sudo pacman -S sdl2 sdl2_image sdl2_mixer sdl2_ttf
+    ```
+
+    ```shell
+    #Debian/Ubuntu:
+    sudo apt install libsdl2-2.0-0 libsdl2-mixer-2.0-0 libsdl2-image-2.0-0 libsdl2-ttf-2.0-0
+    ```
+
+ - Then, cd into the ``linux+macOS`` directory and execute:
+    ```shell 
+    make
+    ```
+ - The game binary will be located in ``build/bin`` directory
+### macOS
+  - Clone this repo and cd into it.
+  - Install [Homebrew](https://brew.sh/).
+  - Install the `SDL2`, `SDL2_image`,`SDL2_mixer` and `SDL2_ttf` libraries using brew:
+    ```shell
+    brew install sdl2 sdl2_image sdl2_mixer sdl2_ttf
+    ```
+  - Then, cd into the ``linux+macOS`` directory and execute:
+    ```shell 
+    make
+    ```
+  - The game binary will be located in ``build/bin`` directory
 ### PS Vita
 Compiling for PS Vita requires vitasdk. Then, execute ``cmake .&& make`` in the ``/psvita`` directory.
 ### Nintendo DS
