@@ -8,7 +8,7 @@ SRCS =  $(wildcard $(CURDIR)/source/*.cpp) \
 SHADER_OBJS =   source/shaders/sprite-frag.inl \
                 source/shaders/guideline-frag.inl
 
-NXDK_DIR = $(CURDIR)/../../nxdk
+NXDK_DIR = /opt/nxdk
 NXDK_CXX = y
 NXDK_SDL = y
 
