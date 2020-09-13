@@ -44,6 +44,7 @@ target_link_libraries(${VITA_APP_NAME}
   -lvita2d 
   -lSceDisplay_stub 
   -lSceGxm_stub
+  -lSceAppMgr_stub
   -lSceSysmodule_stub
   -lSceCtrl_stub
   -lScePgf_stub
