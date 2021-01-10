@@ -34,6 +34,6 @@ Once installed, `cd` to `Terri-Fried/switch` and run `make`. Copy the resulting 
 ### 3DS
 Compiling for 3DS requires `citro2d`, `citro3d`, `3DS-sdl`, `3DS-sdl-mixer`, `3ds-libvorbisidec`, `libctru`, `3ds-libogg`, `3ds-libmad`,
 `3ds-mikmod`, `3ds-zlib` from [devkitPro](https://devkitpro.org/wiki/Getting_Started). To compile a .3dsx file, execute ``make`` in the ``/3ds`` directory,
-or run ``compile.bat`` script. To compile a cia file, execute ``make cia`` in the ``/3ds`` directory, or run ``compile cia.bat`` script.
+or run the ``compile.bat`` script. To compile a cia file, execute ``make cia`` in the ``/3ds`` directory, or run the ``compile cia.bat`` script.
 ## Contributing
 Feel free to create a fork of this repository if you want to port the game to additional platforms! The code can also be used for any other noncommercial purposes.
