@@ -1,0 +1,12 @@
+--atlas -f rgba8888 -z auto
+coin.png
+egg.png
+lava.png
+logo.png
+platform.png
+scorebox.png
+splash_egg.png
+best.png
+tap.png
+QUIT.png
+port.png
