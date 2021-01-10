@@ -45,7 +45,9 @@ public:
     C2D_Sprite sbox2[10];
     C2D_Sprite sbox3[10];
 } numbers;
-int LoadHighScore() {
+
+int LoadHighScore() 
+{
     FILE *scorefile = fopen("/3ds/highscore.bin", "rb");
 
     if(!scorefile)
@@ -60,7 +62,8 @@ int LoadHighScore() {
 
 int highscoreInt = LoadHighScore();
 
-void SaveHighScore(int val) {
+void SaveHighScore(int val) 
+{
     FILE *scorefile = fopen("/3ds/highscore.bin", "wb");
     
     fwrite(&val, sizeof(int), 1, scorefile);
@@ -199,7 +202,6 @@ int main(void)
     C3D_RenderTarget* top = C2D_CreateScreenTarget(GFX_TOP, GFX_LEFT);
     C3D_RenderTarget* bottom = C2D_CreateScreenTarget(GFX_BOTTOM, GFX_LEFT);
 
-
 	C2D_SpriteSheet spriteSheet = C2D_SpriteSheetLoad("romfs:/gfx/sprites.t3x");
     C2D_SpriteSheet sboxspritesheet = C2D_SpriteSheetLoad("romfs:/gfx/numbers.t3x");
 
@@ -224,47 +226,47 @@ int main(void)
     Mix_Chunk *splash = Mix_LoadWAV("romfs:sounds/select.wav");
     Mix_Chunk *die = Mix_LoadWAV("romfs:sounds/die.wav");
 
-   // C2D_SpriteFromSheet(&title, spriteSheet, 3);
 
     for(int i = 0; i <10; i++)
     {
-    C2D_SpriteFromSheet(&scoreboard.sbox1[i], sboxspritesheet, i);
-    C2D_SpriteSetCenter(&scoreboard.sbox1[i], 0.5, 0.5);
-    C2D_SpriteSetScale(&scoreboard.sbox1[i], 1.2,1.5);
-    C2D_SpriteSetPos(&scoreboard.sbox1[i], (10 + sboxpos), (17+ sboxpos)); 
+        C2D_SpriteFromSheet(&scoreboard.sbox1[i], sboxspritesheet, i);
+        C2D_SpriteSetCenter(&scoreboard.sbox1[i], 0.5, 0.5);
+        C2D_SpriteSetScale(&scoreboard.sbox1[i], 1.2,1.5);
+        C2D_SpriteSetPos(&scoreboard.sbox1[i], (10 + sboxpos), (17+ sboxpos)); 
 
-    C2D_SpriteFromSheet(&scoreboard.sbox2[i], sboxspritesheet, i);
-    C2D_SpriteSetCenter(&scoreboard.sbox2[i], 0.5, 0.5);
-    C2D_SpriteSetScale(&scoreboard.sbox2[i], 1.2,1.5);
-    C2D_SpriteSetPos(&scoreboard.sbox2[i], (25 + sboxpos), (17 + sboxpos)); 
+        C2D_SpriteFromSheet(&scoreboard.sbox2[i], sboxspritesheet, i);
+        C2D_SpriteSetCenter(&scoreboard.sbox2[i], 0.5, 0.5);
+        C2D_SpriteSetScale(&scoreboard.sbox2[i], 1.2,1.5);
+        C2D_SpriteSetPos(&scoreboard.sbox2[i], (25 + sboxpos), (17 + sboxpos)); 
 
-    C2D_SpriteFromSheet(&scoreboard.sbox3[i], sboxspritesheet, i);
-    C2D_SpriteSetCenter(&scoreboard.sbox3[i], 0.5, 0.5);
-    C2D_SpriteSetScale(&scoreboard.sbox3[i], 1.2,1.5);
-    C2D_SpriteSetPos(&scoreboard.sbox3[i], (40 + sboxpos), (17 + sboxpos)); 
+        C2D_SpriteFromSheet(&scoreboard.sbox3[i], sboxspritesheet, i);
+        C2D_SpriteSetCenter(&scoreboard.sbox3[i], 0.5, 0.5);
+        C2D_SpriteSetScale(&scoreboard.sbox3[i], 1.2,1.5);
+        C2D_SpriteSetPos(&scoreboard.sbox3[i], (40 + sboxpos), (17 + sboxpos)); 
 
-    C2D_SpriteFromSheet(&highscore.sbox1[i], sboxspritesheet, i);
-    C2D_SpriteSetCenter(&highscore.sbox1[i], 0.5, 0.5);
-    C2D_SpriteSetScale(&highscore.sbox1[i], 1,1.3);
+        C2D_SpriteFromSheet(&highscore.sbox1[i], sboxspritesheet, i);
+        C2D_SpriteSetCenter(&highscore.sbox1[i], 0.5, 0.5);
+        C2D_SpriteSetScale(&highscore.sbox1[i], 1,1.3);
 
-    C2D_SpriteFromSheet(&highscore.sbox2[i], sboxspritesheet, i);
-    C2D_SpriteSetCenter(&highscore.sbox2[i], 0.5, 0.5);
-    C2D_SpriteSetScale(&highscore.sbox2[i], 1,1.3);
+        C2D_SpriteFromSheet(&highscore.sbox2[i], sboxspritesheet, i);
+        C2D_SpriteSetCenter(&highscore.sbox2[i], 0.5, 0.5);
+        C2D_SpriteSetScale(&highscore.sbox2[i], 1,1.3);
 
-    C2D_SpriteFromSheet(&highscore.sbox3[i], sboxspritesheet, i);
-    C2D_SpriteSetCenter(&highscore.sbox3[i], 0.5, 0.5);
-    C2D_SpriteSetScale(&highscore.sbox3[i], 1,1.3);
-}
-for (int i = 0; i < pnum;i++)
+        C2D_SpriteFromSheet(&highscore.sbox3[i], sboxspritesheet, i);
+        C2D_SpriteSetCenter(&highscore.sbox3[i], 0.5, 0.5);
+        C2D_SpriteSetScale(&highscore.sbox3[i], 1,1.3);
+    }
+
+    for (int i = 0; i < pnum;i++)
     {
-    C2D_SpriteFromSheet(&platform[i], spriteSheet, 4);
-    C2D_SpriteSetCenter(&platform[i], 0, 0.5);
-    C2D_SpriteSetScale(&platform[i], 1,1);
+        C2D_SpriteFromSheet(&platform[i], spriteSheet, 4);
+        C2D_SpriteSetCenter(&platform[i], 0, 0.5);
+        C2D_SpriteSetScale(&platform[i], 1,1);
 
-    C2D_SpriteFromSheet(&coin[i], spriteSheet, 0);    
-    C2D_SpriteSetCenter(&coin[i], 0, 0.79);
-    C2D_SpriteSetScale(&coin[i], 1,1);
-}
+        C2D_SpriteFromSheet(&coin[i], spriteSheet, 0);    
+        C2D_SpriteSetCenter(&coin[i], 0, 0.79);
+        C2D_SpriteSetScale(&coin[i], 1,1);
+    }
     
     C2D_SpriteFromSheet(&logo, spriteSheet, 6);
     C2D_SpriteSetCenter(&logo, 0.5, 0.5);
@@ -324,7 +326,8 @@ for (int i = 0; i < pnum;i++)
         }
         C2D_SpriteSetPos(&best, sboxpos, 52); 
         if (titleScreen)
-        {   if (splashTimer > 120)
+        {   
+            if (splashTimer > 120)
             {
                 if (!playedSelect)
                 {    
@@ -350,13 +353,16 @@ for (int i = 0; i < pnum;i++)
                     C2D_DrawSprite(&tap);
                     drawhighscore(highscoreInt, highscore);
                     C3D_FrameEnd(0);
+
                 if (click())
                 {
                     titleScreen = false;
                     mouseDownX = touchX;
                     mouseDownY = touchY;
                 }
-            } else {
+            } 
+            else 
+            {
                 if (!playedSplash)
                 {
                     Mix_PlayChannel(-1, boot, 0);                
@@ -381,23 +387,27 @@ for (int i = 0; i < pnum;i++)
         else 
         {
             C2D_SpriteSetPos(&best, sboxpos, 52); 
+
             for(int i = 0; i <10; i++)
             {
             C2D_SpriteSetPos(&highscore.sbox1[i], (45 + sboxpos), 58); 
             C2D_SpriteSetPos(&highscore.sbox2[i], (55 + sboxpos), 58); 
             C2D_SpriteSetPos(&highscore.sbox3[i], (65 + sboxpos), 58); 
             }
+
             if (playCoinFX)
             {
                 Mix_PlayChannel(-1, coinget, 0); 
                 playCoinFX = false;
             }
+
             if (click() && player.isOnGround())
             {
                 Mix_PlayChannel(-1, click, 0);
                     mouseDownX = touchX;
                     mouseDownY = touchY;
             }
+
             if (release() && player.isOnGround())
             {
                 if (firstTime)
@@ -420,18 +430,22 @@ for (int i = 0; i < pnum;i++)
             }
             checkPlayerCollision();
             player.updatePosition();
+
             if (player.getY() > screenHeight)
             {
                 Mix_PlayChannel(-1, die, 0); 
                 resetGame();
             }
+
             for (int i = 0; i < pnum; i++)
             {
                 platforms[i].updatePosition();
             }
+
             lavaY = screenHeight - 13 - sin(timer) * 2.5;
             timer += 0.05;
             C2D_SpriteSetPos(&Lava, 120, lavaY);
+
             if (hold() && player.isOnGround())
             {   
                 line = true;
@@ -472,7 +486,6 @@ for (int i = 0; i < pnum;i++)
             C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
             C2D_TargetClear(top, C2D_Color32(239, 231, 231, 255));
             C2D_SceneBegin(top);
-
             if (line)
             {
                 if ((touchY - mouseDownY) + player.getY() + (player.getHeight()/2) - 1 + 2 > 0)
@@ -497,15 +510,11 @@ for (int i = 0; i < pnum;i++)
             C2D_DrawSprite(&egg);
             C2D_DrawSprite(&Lava);
             C2D_DrawSprite(&sboxn);
-            
-
             drawscore(scoreInt, scoreboard);
             drawhighscore(highscoreInt, highscore);
             C2D_DrawSprite(&best);
             C3D_FrameEnd(0);
             
-
-          
         }
          
     }
@@ -516,7 +525,7 @@ for (int i = 0; i < pnum;i++)
     Mix_FreeChunk(splash);
     Mix_FreeChunk(die);
     C2D_SpriteSheetFree(sboxspritesheet);
-    C2D_SpriteSheetFree(spriteSheet);  
+    C2D_SpriteSheetFree(spriteSheet); 
     Mix_Quit();
     SDL_Quit();
     C2D_Fini();
