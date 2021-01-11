@@ -40,6 +40,10 @@
 *.nro
 *.nacp
 
+#3DS files
+*.3dsx
+*.cia
+
 # Xbox files
 *.xbe
 *.iso
