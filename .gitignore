@@ -45,3 +45,6 @@
 *.iso
 xbox\source\shaders\sprite-frag.inl
 xbox\source\shaders\guideline-frag.inl
+
+#build results
+build/
