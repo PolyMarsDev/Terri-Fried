@@ -238,36 +238,36 @@ namespace Terri_Fried
 					{
 						DrawTexture(coinSprite, platforms[i].GetCoinX(), platforms[i].GetCoinY(), WHITE);
 					}
-				}
-				DrawTexture(playerSprite, (int)player.GetX(), (int)player.GetY(), WHITE);
-				DrawTexture(lavaSprite, 0, (int)lavaY, WHITE);
-				DrawTexture(scoreBoxSprite, 17, 17, WHITE);
-				DrawTextEx(font, score, new Vector2( 28, 20),64, 0, BLACK);
-				DrawTextEx(font, highscore, new Vector2( 17, 90), 32, 0, BLACK);
+					}
+					DrawTexture(playerSprite, (int)player.GetX(), (int)player.GetY(), WHITE);
+					DrawTexture(lavaSprite, 0, (int)lavaY, WHITE);
+					DrawTexture(scoreBoxSprite, 17, 17, WHITE);
+					DrawTextEx(font, score, new Vector2( 28, 20),64, 0, BLACK);
+					DrawTextEx(font, highscore, new Vector2( 17, 90), 32, 0, BLACK);
 
-				EndDrawing();
+					EndDrawing();
+				}
+
 			}
 
-		}
-
-		UnloadTexture(playerSprite);
-		UnloadTexture(lavaSprite);
-		UnloadTexture(platformSprite);
-		UnloadTexture(coinSprite);
-		UnloadTexture(scoreBoxSprite);
-		UnloadTexture(logo);
-		UnloadTexture(splashEggSprite);
-		UnloadSound(fxClick);
-		UnloadSound(fxLaunch);
-		UnloadSound(fxDeath);
-		UnloadSound(fxCoin);
-		UnloadSound(fxSplash);
-		UnloadSound(fxSelect);
-		UnloadFont(font);
-		CloseAudioDevice();
-		CloseWindow();        
+			UnloadTexture(playerSprite);
+			UnloadTexture(lavaSprite);
+			UnloadTexture(platformSprite);
+			UnloadTexture(coinSprite);
+			UnloadTexture(scoreBoxSprite);
+			UnloadTexture(logo);
+			UnloadTexture(splashEggSprite);
+			UnloadSound(fxClick);
+			UnloadSound(fxLaunch);
+			UnloadSound(fxDeath);
+			UnloadSound(fxCoin);
+			UnloadSound(fxSplash);
+			UnloadSound(fxSelect);
+			UnloadFont(font);
+			CloseAudioDevice();
+			CloseWindow();        
    
-    return;
-}
-}
+			return;
+		}
+	}
 }
