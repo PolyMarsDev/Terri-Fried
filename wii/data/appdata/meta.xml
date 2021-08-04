@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<app version="1">
+	<name>Terri-Fried</name>
+	<coder>PolyMars</coder>
+	<version>1.0</version>
+	<release_date>20200505000000</release_date>
+	<short_description>A Ludum Dare 46 Game</short_description>
+	<long_description>Everyone is dead except for... an egg. Humanity is depending on you to make sure this egg survives. Balance power and precision in Terri-Fried, a game made in 72 hours for Ludum Dare 46!
+
+Hold the A button and move the Wii remote to form a trajectory for the egg, and release A to send it flying!</long_description>
+	<no_ios_reload/>
+	<ahb_access/>
+</app>
