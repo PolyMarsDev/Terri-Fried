@@ -36,6 +36,9 @@
 *.map
 *.lst
 
+# Wii U files
+*.rpx
+
 # Switch files
 *.nro
 *.nacp
