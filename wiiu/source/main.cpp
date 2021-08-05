@@ -142,11 +142,10 @@ void Draw_Trajectory(SDL_Renderer *renderer, int playerX, int playerY, double ve
         
         YvelStep += gravity;
         
-        // FIXME: Not accurate; will cause trajectory to be off slightly
         if (XStep < 16) {
             XvelStep *= -1;
         }
-        if (XStep + 16 > 1280) { // TODO: Cleanup
+        if (XStep + 16 > 1280) {
             XvelStep *= -1;
         }
     }
