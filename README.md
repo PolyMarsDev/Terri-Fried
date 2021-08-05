@@ -28,7 +28,7 @@ Compiling for GameCube requires the same libogc libraries from [devkitPro](https
 Clone [this fork of nxdk](https://github.com/dracc/nxdk/tree/xgu) directly next to the Terri-Fried folder, then [install the nxdk prerequisites](https://github.com/XboxDev/nxdk/wiki/Getting-Started). Follow the instructions [here](https://github.com/Voxel9/xbox-xgu-examples#quick-guide) to fix the XGU headers in nxdk. This is a temporary fix for some duplicate symbol linker errors.  
 Now `cd` to the `Terri-fried/xbox` folder and run `make`. An XBE file should be built in the `bin` folder. Copy the contents of the `bin` folder to your Xbox and run `default.xbe`.
 ### Wii U
-Requires devkitpro, devkitPPC, [wut](https://github.com/devkitPro/wut) and the following packages to be installed with dkp-pacman:  
+Requires devkitpro, devkitPPC, [wut](https://github.com/devkitPro/wut), [libromfs-wiiu](https://github.com/yawut/libromfs-wiiu) and the following packages to be installed with dkp-pacman:  
 `wiiu-pkg-config`, `wiiu-sdl2`, `wiiu-sdl2_mixer`, `wiiu-sdl2_image` `wiiu-sdl2_ttf`  
 Once installed `cd` to `Terri-Fried/wiiu` and run `make`. Create a folder on your SD card with any name in the directory `/wiiu/apps` and copy the file(s) `Terri-Fried.rpx` (`icon.png` and `meta.xml` *optional*) into that folder. You will also need to create a folder on the root of your SD card named `Terri-Fried`. You can then launch via the Homebrew Launcher.
 ### Nintendo Switch
