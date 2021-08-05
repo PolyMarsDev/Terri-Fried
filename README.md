@@ -34,6 +34,6 @@ Once installed, `cd` to `Terri-Fried/switch` and run `make`. Copy the resulting 
 ### Wii U
 Requires devkitpro, devkitPPC, [wut](https://github.com/devkitPro/wut) and the following packages to be installed with dkp-pacman:  
 `wiiu-pkg-config`, `wiiu-sdl2`, `wiiu-sdl2_mixer`, `wiiu-sdl2_image` `wiiu-sdl2_ttf`  
-Once installed `cd` to `Terri-Fried/wiiu` and run `make`. Create a folder on your SD card with any name in the directory `/wiiu/apps` and copy the file(s) `Terri-Fried.rpx` (`icon.png` and `meta.xml` *optional*) into that folder. You will also need to create a folder on the root of your SD card named `Terri-Fried`. You can the launch via the Homebrew Launcher.
+Once installed `cd` to `Terri-Fried/wiiu` and run `make`. Create a folder on your SD card with any name in the directory `/wiiu/apps` and copy the file(s) `Terri-Fried.rpx` (`icon.png` and `meta.xml` *optional*) into that folder. You will also need to create a folder on the root of your SD card named `Terri-Fried`. You can the launch via then Homebrew Launcher.
 ## Contributing
 Feel free to create a fork of this repository if you want to port the game to additional platforms! The code can also be used for any other noncommercial purposes.
