@@ -141,3 +141,31 @@ jobs:
         with:
           name: switch
           path: ./switch/Terri-Fried.nro
+          
+  build-windows-sdl2:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: msys2/setup-msys2@v2
+        with:
+          update: true
+          install: >-
+            base-devel
+            git
+            mingw-w64-x86_64-toolchain
+            mingw64/mingw-w64-x86_64-SDL2
+            mingw64/mingw-w64-x86_64-SDL2_mixer
+            mingw64/mingw-w64-x86_64-SDL2_image
+            mingw64/mingw-w64-x86_64-SDL2_ttf
+            make
+      - uses: actions/checkout@v2
+      - name: build
+        run: |
+          cd windows/sdl2 && make && cd build/bin && mv ../../resources .
+      - name: upload windows sdl Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: windows-sdl
+          path: ./windows/sdl2/build/bin/
