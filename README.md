@@ -31,5 +31,9 @@ Now `cd` to the `Terri-fried/xbox` folder and run `make`. An XBE file should be 
 Requires devkitpro, devkitARM, libNX and the following packages to be installed via dkp-pacman:  
 `switch-pkg-config`, `switch-SDL2`, `switch-SDL2_mixer`, `switch-SDL2_image` `switch-SDL2_ttf`  
 Once installed, `cd` to `Terri-Fried/switch` and run `make`. Copy the resulting NRO file over to your Switch's microSD card in the `switch` folder and launch via nx-hbmenu.
+### Wii U
+Requires devkitpro, devkitPPC, [wut](https://github.com/devkitPro/wut) and the following packages to be installed with dkp-pacman:
+`wiiu-pkg-config`, `wiiu-sdl2`, `wiiu-sdl2_mixer`, `wiiu-sdl2_image` `wiiu-sdl2_ttf`
+Once installed `cd` to `Terri-Fried/wiiu` and run `make`. Create a folder on your SD card with any name in the directory `/wiiu/apps` and copy the file(s) `Terri-Fried.rpx`, (`icon.png` and `meta.xml` *optional*) into that folder. You will also need to create a folder on the root of your SD card named `Terri-Fried`.
 ## Contributing
 Feel free to create a fork of this repository if you want to port the game to additional platforms! The code can also be used for any other noncommercial purposes.
