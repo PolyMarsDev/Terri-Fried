@@ -1,0 +1,171 @@
+name: build
+
+on:
+  push:
+    paths-ignore:
+      - '**/*.md'
+  pull_request:
+    paths-ignore:
+      - '**/*.md'
+      
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup
+        run: sudo apt-get install -y make libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
+      - name: build
+        run: |
+          cd linux && make
+      - name: copy resources
+        run: |
+          cd linux && cp -vr ./resources ./build/bin
+      - name: Upload linux Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: linux
+          path: ./linux/build/bin
+          
+  build-vita:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup dependencies
+        run: sudo apt-get install -y make cmake
+      - name: setup vitaSDK
+        run: |
+          export VITASDK=/usr/local/vitasdk && export PATH=$VITASDK/bin:$PATH && git clone https://github.com/vitasdk/vdpm && cd vdpm && ./bootstrap-vitasdk.sh && ./install-all.sh
+      - name: build
+        run: |
+          export VITASDK=/usr/local/vitasdk && export PATH=$VITASDK/bin:$PATH && cd psvita && cmake . && make
+      - name: Upload vita Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: vita
+          path: ./psvita/Terri-Fried.vpk
+
+  build-ds:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitarm
+    steps:
+      - uses: actions/checkout@v2
+      - name: build
+        run: |
+          cd nds && make && mv nds.nds Terri-Fried.nds
+      - name: Upload nds Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: nds
+          path: ./nds/Terri-Fried.nds
+          
+  build-wii:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitppc
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup dependencies
+        run: sudo apt-get install -y make
+      - name: clone grrlib
+        run: |
+          cd wii && git clone -n https://github.com/GRRLIB/GRRLIB.git && cd GRRLIB && git checkout fd38e8be0d1b8033a6d06c6c1a8dbdfc33359ddb
+      - name: build GRRLIB
+        run: |
+         cd ./wii/GRRLIB/GRRLIB && dkp-pacman --sync --needed --noconfirm libfat-ogc ppc-libpng ppc-freetype ppc-libjpeg-turbo && make clean all install
+      - name: build
+        run: |
+         cd wii && make
+      - name: setup output
+        run: |
+          cd wii && mkdir -p ./output/apps/Terri-Fried/ && mv wii.dol ./output/apps/Terri-Fried/boot.dol && mv ./data/appdata/icon.png ./output/apps/Terri-Fried/ && mv ./data/appdata/meta.xml ./output/apps/Terri-Fried/
+      - name: upload wii Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: wii
+          path: ./wii/output/
+          
+  build-gamecube:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitppc
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup dependencies
+        run: sudo apt-get install -y make
+      - name: clone grrlib
+        run: |
+          cd gamecube && git clone https://github.com/capz/GRRLIB.git && cd GRRLIB
+      - name: build GRRLIB
+        run: |
+         cd ./gamecube/GRRLIB/GRRLIB && dkp-pacman --sync --needed --noconfirm libfat-ogc ppc-libpng ppc-freetype ppc-libjpeg-turbo && make clean all install DEVKITPRO=$DEVKITPRO
+      - name: build
+        run: |
+         cd gamecube && make && dir
+      - name: rename DOL file
+        run: |
+          cd gamecube && mv gamecube.dol Terri-Fried.dol
+      - name: upload gamecube Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: gamecube
+          path: ./gamecube/Terri-Fried.dol
+       
+  build-xbox:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: clone nxdk
+        run: |
+          cd .. && git clone --recursive https://github.com/dracc/nxdk.git && cd nxdk && git checkout xgu
+      - name: install nxdk dependencies
+        run: |
+          sudo apt-get install build-essential cmake flex bison clang lld git llvm
+      - name: build
+        run: |
+          cd xbox && make && cd bin && mv default.xbe Terri-Fried.xbe
+      - name: upload xbox Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: xbox
+          path: ./xbox/bin/Terri-Fried.xbe
+          
+  build-switch:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkita64
+    steps:
+      - uses: actions/checkout@v2
+      - name: build
+        run: |
+          cd switch && make
+      - name: upload switch Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: switch
+          path: ./switch/Terri-Fried.nro
+          
+  build-windows-sdl2:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: msys2/setup-msys2@v2
+        with:
+          update: true
+          install: >-
+            base-devel
+            git
+            mingw-w64-x86_64-toolchain
+            mingw64/mingw-w64-x86_64-SDL2
+            mingw64/mingw-w64-x86_64-SDL2_mixer
+            mingw64/mingw-w64-x86_64-SDL2_image
+            mingw64/mingw-w64-x86_64-SDL2_ttf
+            make
+      - uses: actions/checkout@v2
+      - name: build
+        run: |
+          cd windows/sdl2 && make && cd build/bin && mv ../../resources .
+      - name: upload windows sdl Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: windows-sdl
+          path: ./windows/sdl2/build/bin/
