@@ -1,0 +1,349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85140C8F2972705400B27FBF /* platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85140C872972705400B27FBF /* platform.cpp */; };
+		85140C902972705400B27FBF /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85140C882972705400B27FBF /* player.cpp */; };
+		85140C912972705400B27FBF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85140C8B2972705400B27FBF /* main.cpp */; };
+		85140C922972705400B27FBF /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 85140C8C2972705400B27FBF /* Makefile */; };
+		85140C962972732800B27FBF /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85140C952972732800B27FBF /* Metal.framework */; };
+		85140C982972733600B27FBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85140C972972733600B27FBF /* Foundation.framework */; };
+		85140C9A2972733D00B27FBF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85140C992972733D00B27FBF /* QuartzCore.framework */; };
+		85140C9C29727EBE00B27FBF /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85140C9B29727EBE00B27FBF /* SDL2.framework */; };
+		85140C9E2972802700B27FBF /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85140C9D2972802700B27FBF /* SDL2_image.framework */; };
+		85140CA02972835F00B27FBF /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85140C9F2972835F00B27FBF /* SDL2_mixer.framework */; };
+		85140CA2297283CA00B27FBF /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85140CA1297283CA00B27FBF /* SDL2_ttf.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		85140C7B29726D6400B27FBF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		85140C7D29726D6400B27FBF /* Terri-Fried */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Terri-Fried"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85140C872972705400B27FBF /* platform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = platform.cpp; sourceTree = "<group>"; };
+		85140C882972705400B27FBF /* player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
+		85140C892972705400B27FBF /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
+		85140C8A2972705400B27FBF /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
+		85140C8B2972705400B27FBF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		85140C8C2972705400B27FBF /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		85140C8D2972705400B27FBF /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
+		85140C8E2972705400B27FBF /* winres */ = {isa = PBXFileReference; lastKnownFileType = folder; path = winres; sourceTree = "<group>"; };
+		85140C932972725700B27FBF /* metal-cpp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "metal-cpp"; sourceTree = "<group>"; };
+		85140C952972732800B27FBF /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		85140C972972733600B27FBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		85140C992972733D00B27FBF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		85140C9B29727EBE00B27FBF /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		85140C9D2972802700B27FBF /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		85140C9F2972835F00B27FBF /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../../../../Library/Frameworks/SDL2_mixer.framework; sourceTree = "<group>"; };
+		85140CA1297283CA00B27FBF /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85140C7A29726D6400B27FBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85140CA2297283CA00B27FBF /* SDL2_ttf.framework in Frameworks */,
+				85140CA02972835F00B27FBF /* SDL2_mixer.framework in Frameworks */,
+				85140C9E2972802700B27FBF /* SDL2_image.framework in Frameworks */,
+				85140C9C29727EBE00B27FBF /* SDL2.framework in Frameworks */,
+				85140C9A2972733D00B27FBF /* QuartzCore.framework in Frameworks */,
+				85140C982972733600B27FBF /* Foundation.framework in Frameworks */,
+				85140C962972732800B27FBF /* Metal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85140C7429726D6400B27FBF = {
+			isa = PBXGroup;
+			children = (
+				85140C932972725700B27FBF /* metal-cpp */,
+				85140C7F29726D6400B27FBF /* Terri-Fried */,
+				85140C7E29726D6400B27FBF /* Products */,
+				85140C942972732800B27FBF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		85140C7E29726D6400B27FBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85140C7D29726D6400B27FBF /* Terri-Fried */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85140C7F29726D6400B27FBF /* Terri-Fried */ = {
+			isa = PBXGroup;
+			children = (
+				85140C8B2972705400B27FBF /* main.cpp */,
+				85140C8C2972705400B27FBF /* Makefile */,
+				85140C872972705400B27FBF /* platform.cpp */,
+				85140C892972705400B27FBF /* platform.h */,
+				85140C882972705400B27FBF /* player.cpp */,
+				85140C8A2972705400B27FBF /* player.h */,
+				85140C8D2972705400B27FBF /* resources */,
+				85140C8E2972705400B27FBF /* winres */,
+			);
+			path = "Terri-Fried";
+			sourceTree = "<group>";
+		};
+		85140C942972732800B27FBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85140CA1297283CA00B27FBF /* SDL2_ttf.framework */,
+				85140C9F2972835F00B27FBF /* SDL2_mixer.framework */,
+				85140C9D2972802700B27FBF /* SDL2_image.framework */,
+				85140C9B29727EBE00B27FBF /* SDL2.framework */,
+				85140C992972733D00B27FBF /* QuartzCore.framework */,
+				85140C972972733600B27FBF /* Foundation.framework */,
+				85140C952972732800B27FBF /* Metal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85140C7C29726D6400B27FBF /* Terri-Fried */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85140C8429726D6400B27FBF /* Build configuration list for PBXNativeTarget "Terri-Fried" */;
+			buildPhases = (
+				85140C7929726D6400B27FBF /* Sources */,
+				85140C7A29726D6400B27FBF /* Frameworks */,
+				85140C7B29726D6400B27FBF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Terri-Fried";
+			productName = "Terri-Fried";
+			productReference = 85140C7D29726D6400B27FBF /* Terri-Fried */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85140C7529726D6400B27FBF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					85140C7C29726D6400B27FBF = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 85140C7829726D6400B27FBF /* Build configuration list for PBXProject "Terri-Fried" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 85140C7429726D6400B27FBF;
+			productRefGroup = 85140C7E29726D6400B27FBF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85140C7C29726D6400B27FBF /* Terri-Fried */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85140C7929726D6400B27FBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85140C922972705400B27FBF /* Makefile in Sources */,
+				85140C8F2972705400B27FBF /* platform.cpp in Sources */,
+				85140C912972705400B27FBF /* main.cpp in Sources */,
+				85140C902972705400B27FBF /* player.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		85140C8229726D6400B27FBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		85140C8329726D6400B27FBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		85140C8529726D6400B27FBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/metal-cpp/";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		85140C8629726D6400B27FBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/metal-cpp/";
+				"HEADER_SEARCH_PATHS[arch=*]" = "metal-cpp/";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85140C7829726D6400B27FBF /* Build configuration list for PBXProject "Terri-Fried" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85140C8229726D6400B27FBF /* Debug */,
+				85140C8329726D6400B27FBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85140C8429726D6400B27FBF /* Build configuration list for PBXNativeTarget "Terri-Fried" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85140C8529726D6400B27FBF /* Debug */,
+				85140C8629726D6400B27FBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85140C7529726D6400B27FBF /* Project object */;
+}
