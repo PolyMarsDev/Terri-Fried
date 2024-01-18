@@ -7,7 +7,6 @@ SOURCES     = $(wildcard *.cpp)
 OBJ_DIR     = build/obj
 OUT_DIR     = build/bin
 OBJS        = $(patsubst %, $(OBJ_DIR)/%, $(SOURCES:.cpp=.o))
-RES_FILES   = winres/TF-icon.res
 MKDIR_P     = mkdir -p
 
 FLAGS       = -O3 -std=c++11
@@ -28,7 +27,7 @@ $(OUT_DIR):
 
 
 $(NAME): $(OBJS)
-	$(CXX) $(FLAGS) -o $(OUT_DIR)/$(NAME) $(OBJS) $(RES_FILES) $(LIBS)
+	$(CXX) $(FLAGS) -o $(OUT_DIR)/$(NAME) $(OBJS) $(LIBS)
 
 $(OBJ_DIR)/%.o: %.cpp
 	$(CXX) $(FLAGS) -c $< -o $@
